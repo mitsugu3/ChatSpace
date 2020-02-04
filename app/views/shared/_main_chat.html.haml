@@ -1,0 +1,26 @@
+.chat_main
+  .chat_main_header
+    .chat_main_header__left-box
+      .chat-main_header__leftbox__current_group
+        aaaa
+      .chat-main_header__left-box__member-list
+        member:aaa
+    .main-header__edit-btn
+      Edit
+  .chat_main_messages
+    .chat_main_messages_message
+      .chat_main_messages_message__upper_info
+        aaaa
+      .chat_main_messages_message__upper_info__date
+        eeee
+    .chat_main_messages_message__text
+      1111
+  
+  .form
+    %form
+      %input.form__message
+      .form__mask
+        %label.form__mask__image
+          = icon('fa','image',class: 'icon')
+          %input.hidden{type: 'file'}
+      %input.form__submit{type: 'submit', value: 'Send'}
