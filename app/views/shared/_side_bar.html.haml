@@ -2,14 +2,15 @@
   .side_header
     .side_box
       .side_box__name
-        masa
+        = current_user.name
       .side_box__menu
         .side_box_menu__new_group
-          = link_to "#" do
-            = icon('fa', 'edit')
+          = link_to do
+            = icon('fas', 'pen-square', class: 'icon')
         .side_box_menu__edit_user
-          = link_to "#" do
-            = icon('fa', 'cog')
+          = link_to edit_user_path(current_user) do
+            = icon('fas', 'cog', class: 'icon')
+
 
   .chat_side_groups
     .chat_side_groups__group_name
