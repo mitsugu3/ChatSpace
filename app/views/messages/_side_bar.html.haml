@@ -5,7 +5,7 @@
         = current_user.name
       .side_box__menu
         .side_box_menu__new_group
-          = link_to do
+          = link_to new_group_path do
             = icon('fas', 'pen-square', class: 'icon')
         .side_box_menu__edit_user
           = link_to edit_user_path(current_user) do
@@ -13,7 +13,10 @@
 
 
   .chat_side_groups
-    .chat_side_groups__group_name
-      techcamp
-    .chat_side_groups__latest_message
-      まだメッセージがありません。
+    - current_user.groups.each do |group|
+      .group
+        = link_to edit_group_path(group) do
+          .chat_side_groups__group_name
+            = group.name
+          .chat_side_groups__latest_message
+            まだメッセージがありません。
