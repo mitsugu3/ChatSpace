@@ -47,15 +47,18 @@ i {
 
 
 .chat_side_groups {
+    
     height: calc(100vh - 100px);
     background-color: #2f3e51;
     padding: 20px 20px 0;
     overflow: scroll;
     &__group_name {
+      color: white;
       font-size: 15px;
       margin-bottom: 5px;
     }
     &__latest_message {
+      color: white;
       font-size: 11px;
     }
 }
