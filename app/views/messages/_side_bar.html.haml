@@ -15,8 +15,8 @@
   .chat_side_groups
     - current_user.groups.each do |group|
       .group
-        = link_to edit_group_path(group) do
+        = link_to group_messages_path(group) do
           .chat_side_groups__group_name
             = group.name
-          .chat_side_groups__latest_message
-            まだメッセージがありません。
+          .chat_side_groups__last_message
+            = group.show_last_message
