@@ -2,24 +2,23 @@
   .chat_main_header
     .chat_main_header__left-box
       .chat_main_header__leftbox__current_group
-        aaaa
+        = @group.name
       .chat_main_header__left-box__member-list
-        member:aaa
+        Members:
+        - @group.users.each do |user|
+          = user.name             
+                
     .chat_main_header__edit-btn
-      Edit
-  .chat_main__messages
-    .chat_main_messages__message
-      .chat_main_messages_message__upper_info
-        aaaa
-      .chat_main_messages_message__upper_info__date
-        eeee
-    .chat_main_messages_message__text
-      1111
-  
+      = link_to 'Edit', edit_group_path(@group)
+
+  .messages
+    = render partial: 'message' ,collection: @messages
+
   .form
-    %input.form__message
-    .form__mask
-      %label.form__mask__image
-        = icon('fa','image',class: 'icon')
-        %input.hidden{type: 'file'}
-    %input.form__submit{type: 'submit', value: 'Send'}
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+      .form__mask
+        = f.label :image, class: 'form__mask__image' do
+          = icon('fa','image',class: 'icon')
+          = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'form__submit'

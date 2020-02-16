@@ -20,13 +20,14 @@
       color: #333;
       margin-bottom: 15px;
     }
-    &__left-box__member-list {
+    &__member-list {
       display: flex;
       font-size: 12px;
       color: #999999;
     }
   }
-    &__edit-btn {
+}
+  .chat_main_header__edit-btn {
       height: 40px;
       line-height: 40px;
       padding: 0 20px;
@@ -37,30 +38,31 @@
       color: #38aef0;
       cursor: pointer;
     }
-}
-    .chat_main__messages {
+
+    .messages {
       height: calc(100vh - 190px);
       padding: 46px 40px;
       background-color: #fafafa;
       overflow: scroll;
-    &__message { 
-      padding-bottom: 40px;
-    }
-    &__upper_info {
+      &__message {
+        padding-bottom: 40px;
+      }
+    .upper-message { 
+      padding-bottom: 10px;
       display: flex;
-      margin-bottom: 10px;
+      &__user-name {
+        color: #434a54;
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      &__date {
+        color: #999999;
+        font-size: 12px;
+        margin-left: 10px;
+      }
     }
-    &__upper-info__talker {
-    color: #434a54;
-    font-size: 16px;
-    font-weight: bold;
-    }
-    &__upper_info__date {
-    color: #999999;
-    font-size: 12px;
-    margin-left: 10px;
-    }
-    &__text {
+    .lower-message {
       color: #434a54;
       font-size: 14px;
       margin-bottom: 10px;
