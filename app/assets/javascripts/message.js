@@ -47,6 +47,7 @@ $(function(){
   });
 
   var reloadMessages = function() {
+    console.log("check");
     var last_message_id = $('.message:last').data('id');
     console.log(last_message_id);
     $.ajax({
